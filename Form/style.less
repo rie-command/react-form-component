@@ -1,0 +1,50 @@
+@basetColor: #404040;
+@secondColor: #c7c7c7;
+@errorColor: #b50c05;
+
+*{
+  text-overflow: ellipsis;
+}
+
+.horizontal-flex-block{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.vertical-flex-block{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.label{
+  color: @secondColor;
+  font-size: 16px;
+  margin: auto;
+}
+
+.input{
+  &-text{
+    border: @secondColor solid 1px;
+    width: 100%;
+    &-error{
+      box-shadow: 0 0 10px @errorColor;
+      outline:@errorColor;
+    }
+    &-valid{
+      //box-shadow: 0 0 10px @basetColor;
+      //outline:@basetColor;
+    }
+  }
+}
+
+.field{
+  .horizontal-flex-block;
+  padding: 5px;
+  &>*{
+    margin-right: 4px;
+  }
+}
